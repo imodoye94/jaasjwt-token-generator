@@ -71,7 +71,7 @@ exports.jaasjwt = async (req, res) => {
             room,
             sub: "vpaas-magic-cookie-098f04f2b4b64b6cbd0b6490cd5f2319"
         })
-        .setProtectedHeader({ alg: 'RS256', typ: 'JWT', kid: 'vpaas-magic-cookie-098f04f2b4b64b6cbd0b6490cd5f2319/594903' })
+        .setProtectedHeader({ alg: 'RS256', typ: 'JWT', kid: 'vpaas-magic-cookie-098f04f2b4b64b6cbd0b6490cd5f2319/f682a6' })
         .sign(jwkPrivateKey);
 
         // Send the JWT back to the client
@@ -81,5 +81,6 @@ exports.jaasjwt = async (req, res) => {
         res.status(500).send('Error generating JWT');
     }
 };
+
 
 
