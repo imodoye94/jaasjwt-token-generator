@@ -8,7 +8,7 @@ const PEM_PRIVATE_KEY = process.env.RS256_PRIVATE_KEY;
 exports.jaasjwt = async (req, res) => {
 
     // Stricter CORS setup to only allow requests from our domain
-    res.set('Access-Control-Allow-Origin', 'https://backend.mediverse.ai, https://backend.hib.to');
+    res.set('Access-Control-Allow-Origin', 'https://backend.hib.to');
     res.set('Access-Control-Allow-Methods', 'POST');
     res.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
@@ -81,6 +81,7 @@ exports.jaasjwt = async (req, res) => {
         res.status(500).send('Error generating JWT');
     }
 };
+
 
 
 
