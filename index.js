@@ -65,7 +65,7 @@ exports.jaasjwt = async (req, res) => {
                     moderation: moderation.toString()
                 }
             },
-            exp: Math.floor(Date.now() / 1000) + (1 * 365 * 86400), // Current time + ~1 year
+            exp: Math.floor(Date.now() / 1000) + (1 * 1 * 86400), // Current time + ~1 day
             iss: "chat",
             nbf: Math.floor(Date.now() / 1000),
             room,
@@ -81,4 +81,5 @@ exports.jaasjwt = async (req, res) => {
         res.status(500).send('Error generating JWT');
     }
 };
+
 
