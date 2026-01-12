@@ -2,7 +2,7 @@ const functions = require('@google-cloud/functions-framework');
 const { SignJWT, importPKCS8 } = require('jose');
 const fs = require('fs');
 
-const KEY_PATH = process.env.RS256_PRIVATE_KEY_PATH || '/run/secrets/jaaskey.pk';
+const KEY_PATH = process.env.RS256_PRIVATE_KEY_PATH;
 
 let cachedKey = null;
 async function getKey() {
@@ -62,3 +62,4 @@ functions.http('jaasjwt', async (req, res) => {
     return res.status(500).send('Error generating JWT');
   }
 });
+
